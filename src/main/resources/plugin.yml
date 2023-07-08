@@ -1,0 +1,14 @@
+name: Compactor
+version: '${project.version}'
+main: org.mooner.compactor.Compactor
+api-version: 1.19
+prefix: Compactor
+authors: [Mooner510]
+
+commands:
+  blockmaker:
+    aliases: ["블럭생성기"]
+    permission: compactor.blockmaker
+  craft:
+    aliases: ["조합"]
+    permission: compactor.craft
