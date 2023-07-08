@@ -4,6 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.block.Chest;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -42,6 +43,7 @@ public class CompactorAlgorithm {
         addItem(inventory, Material.IRON_BLOCK, iron / 9);
         addItem(inventory, Material.COPPER_BLOCK, copper / 9);
         addItem(inventory, Material.NETHERITE_BLOCK, netherite / 9);
+        addItem(inventory, Material.LAPIS_BLOCK, lapis / 9);
 
         addItem(inventory, Material.COAL, coal % 9);
         addItem(inventory, Material.DIAMOND, diamond % 9);
@@ -50,7 +52,6 @@ public class CompactorAlgorithm {
         addItem(inventory, Material.IRON_INGOT, iron % 9);
         addItem(inventory, Material.GOLD_INGOT, gold % 9);
         addItem(inventory, Material.COPPER_INGOT, copper % 9);
-        addItem(inventory, Material.LAPIS_BLOCK, lapis / 9);
         addItem(inventory, Material.LAPIS_LAZULI, lapis % 9);
         addItem(inventory, Material.NETHERITE_INGOT, netherite % 9);
         return true;
@@ -61,7 +62,7 @@ public class CompactorAlgorithm {
             World world = p.getWorld();
             Location loc = p.getLocation();
             inventory.addItem(new ItemStack(material, amount)).values().forEach(item -> world.dropItemNaturally(loc, item));
-        } else if(inventory.getHolder() instanceof Block b) {
+        } else if(inventory.getHolder() instanceof Chest b) {
             World world = b.getWorld();
             Location loc = b.getLocation();
             inventory.addItem(new ItemStack(material, amount)).values().forEach(item -> world.dropItemNaturally(loc, item));
