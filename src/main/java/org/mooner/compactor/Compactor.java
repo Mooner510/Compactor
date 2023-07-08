@@ -50,7 +50,7 @@ public final class Compactor extends JavaPlugin implements Listener {
                 if (CompactorAlgorithm.compact(chest.getInventory())) {
                     event.getPlayer().playSound(event.getPlayer(), Sound.BLOCK_ANVIL_USE, SoundCategory.MASTER, 1, 1);
                     event.getPlayer().sendMessage(chat("&a성공적으로 조합이 되었습니다"));
-                    chest.update();
+                    chest.update(true, true);
                 } else {
                     event.getPlayer().playSound(event.getPlayer(), Sound.ENTITY_ENDERMAN_TELEPORT, SoundCategory.MASTER, 1, 0.5f);
                     event.getPlayer().sendMessage(chat("&c조합실패(재료없음)"));
