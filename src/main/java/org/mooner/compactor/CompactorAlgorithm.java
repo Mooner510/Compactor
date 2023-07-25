@@ -3,7 +3,6 @@ package org.mooner.compactor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
-import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -11,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class CompactorAlgorithm {
     public static boolean compact(Inventory inventory) {
-        int coal = 0, diamond = 0, emerald = 0, iron = 0, gold = 0, copper = 0, redstone = 0, lapis = 0, netherite = 0;
+        int coal = 0, diamond = 0, emerald = 0, iron = 0, gold = 0, copper = 0, redstone = 0, lapis = 0, netherite = 0, quatz = 0;
         for (ItemStack itemStack : inventory) {
             if(itemStack == null) continue;
             switch (itemStack.getType()) {
@@ -24,6 +23,7 @@ public class CompactorAlgorithm {
                 case COPPER_INGOT -> copper += itemStack.getAmount();
                 case LAPIS_LAZULI -> lapis += itemStack.getAmount();
                 case NETHERITE_INGOT -> netherite += itemStack.getAmount();
+                case QUARTZ -> quatz += itemStack.getAmount();
                 default -> {
                     continue;
                 }
@@ -44,6 +44,7 @@ public class CompactorAlgorithm {
         addItem(inventory, Material.COPPER_BLOCK, copper / 9);
         addItem(inventory, Material.NETHERITE_BLOCK, netherite / 9);
         addItem(inventory, Material.LAPIS_BLOCK, lapis / 9);
+        addItem(inventory, Material.QUARTZ_BLOCK, lapis / 4);
 
         addItem(inventory, Material.COAL, coal % 9);
         addItem(inventory, Material.DIAMOND, diamond % 9);
@@ -54,6 +55,7 @@ public class CompactorAlgorithm {
         addItem(inventory, Material.COPPER_INGOT, copper % 9);
         addItem(inventory, Material.LAPIS_LAZULI, lapis % 9);
         addItem(inventory, Material.NETHERITE_INGOT, netherite % 9);
+        addItem(inventory, Material.QUARTZ, netherite % 4);
         return true;
     }
 
