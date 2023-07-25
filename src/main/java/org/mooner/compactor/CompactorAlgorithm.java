@@ -31,7 +31,7 @@ public class CompactorAlgorithm {
             itemStack.setAmount(0);
         }
 
-        if(coal == 0 && diamond == 0 && emerald == 0 && iron == 0 && gold == 0 && copper == 0 && redstone == 0 && lapis == 0 && netherite == 0) {
+        if(coal == 0 && diamond == 0 && emerald == 0 && iron == 0 && gold == 0 && copper == 0 && redstone == 0 && lapis == 0 && netherite == 0 && quatz == 0) {
             return false;
         }
 
