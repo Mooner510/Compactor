@@ -44,7 +44,7 @@ public class CompactorAlgorithm {
         addItem(inventory, Material.COPPER_BLOCK, copper / 9);
         addItem(inventory, Material.NETHERITE_BLOCK, netherite / 9);
         addItem(inventory, Material.LAPIS_BLOCK, lapis / 9);
-        addItem(inventory, Material.QUARTZ_BLOCK, lapis / 4);
+        addItem(inventory, Material.QUARTZ_BLOCK, quatz / 4);
 
         addItem(inventory, Material.COAL, coal % 9);
         addItem(inventory, Material.DIAMOND, diamond % 9);
@@ -55,7 +55,7 @@ public class CompactorAlgorithm {
         addItem(inventory, Material.COPPER_INGOT, copper % 9);
         addItem(inventory, Material.LAPIS_LAZULI, lapis % 9);
         addItem(inventory, Material.NETHERITE_INGOT, netherite % 9);
-        addItem(inventory, Material.QUARTZ, netherite % 4);
+        addItem(inventory, Material.QUARTZ, quatz % 4);
         return true;
     }
 
