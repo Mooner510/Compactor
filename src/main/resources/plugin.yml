@@ -1,7 +1,7 @@
 name: Compactor
 version: '${project.version}'
 main: org.mooner.compactor.Compactor
-api-version: 1.19
+api-version: 1.21
 prefix: Compactor
 authors: [Mooner510]
 
