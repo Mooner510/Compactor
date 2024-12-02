@@ -60,6 +60,7 @@ public class CompactorAlgorithm {
     }
 
     private static void addItem(Inventory inventory, Material material, int amount) {
+        if(amount <= 0) return;
         if(inventory.getHolder() instanceof Player p) {
             World world = p.getWorld();
             Location loc = p.getLocation();
